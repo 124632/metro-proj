@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.xworkz.spring.component.Institute" id="institute">
+	<property name="trainers">
+		<list>
+		<value>Omkar</value>
+		<value>Asha</value>
+		<value>Ashok</value>
+		<value>Pavan</value>
+		<value>Devendra</value>
+		</list>
+	</property>
+	<property name="name" ref="nameref"/>
+	<property name="location" ref="location"/>
+	</bean>
+	
+	<bean class="java.lang.String" id="nameref">
+	<constructor-arg value="xworkz"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.component.Location" id="location">
+	<property name="street" value="vijaynagar" />
+	<property name="doorNo" value="234"/>
+	<property name="city" ref="city"/>
+	</bean>
+	
+	<bean class="com.xworkz.spring.component.City" id="city">
+	<property name="name" value="Davanagere" />
+	<property name="state" ref="state" />
+	<property name="diameter" value="1500" />
+	</bean>
+	
+	<bean class="com.xworkz.spring.component.State" id="state">
+	<property name="name" value="Mysore" />
+	<property name="unionTerriority" value="0" />
+	</bean>
+</beans>
